@@ -1,0 +1,65 @@
+{
+  "name": "permissionos-monorepo",
+  "version": "0.1.0",
+  "description": "PermissionOS - The Human Approval Layer for AI Agents (MCP Gateway)",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "tsx apps/gateway/src/index.ts",
+    "dev:upstream": "tsx apps/demo-upstream/src/index.ts",
+    "build": "npm run build --workspaces --if-present",
+    "test": "tsx --test --test-concurrency=1 tests/policy.test.ts tests/transport.test.ts tests/approvals.test.ts tests/security.test.ts tests/e2e.test.ts",
+    "seed": "tsx scripts/seed-demo.ts",
+    "db:seed": "tsx scripts/seed-demo.ts",
+    "db:reset": "tsx scripts/reset-demo.ts",
+    "dev:web": "npm run dev --workspace=@permissionos/web",
+    "dev:all": "node scripts/dev-all.mjs",
+    "dev:gateway": "tsx apps/gateway/src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "governance",
+    "permissions",
+    "human-in-the-loop",
+    "audit-log",
+    "ai-agents"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.25",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/supertest": "^6.0.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "supertest": "^7.3.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vite": "^6.4.5",
+    "vitest": "^3.2.7"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "better-sqlite3": "^13.0.3",
+    "clsx": "^2.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.3",
+    "lucide-react": "^1.61.0",
+    "react-router-dom": "^7.18.4",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^3.25.76",
+    "mcp-policy-kit": "git+https://github.com/REPLACE_WITH_GITHUB_USERNAME/mcp-policy-kit.git#v0.1.0"
+  }
+}

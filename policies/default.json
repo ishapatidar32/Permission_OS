@@ -1,0 +1,31 @@
+{
+  "version": "2026-10-22.1",
+  "defaultEffect": "deny",
+  "rules": [
+    {
+      "tool": "read_order",
+      "effect": "allow",
+      "roles": ["operator", "approver"],
+      "reasonCode": "READ_ALLOWED"
+    },
+    {
+      "tool": "update_delivery_address",
+      "effect": "approve",
+      "roles": ["operator"],
+      "reasonCode": "SENSITIVE_WRITE",
+      "approvalTtlSeconds": 300
+    },
+    {
+      "tool": "export_all_customers",
+      "effect": "deny",
+      "roles": ["operator", "approver"],
+      "reasonCode": "BULK_EXPORT_BLOCKED"
+    },
+    {
+      "tool": "get_action_status",
+      "effect": "allow",
+      "roles": ["operator", "approver"],
+      "reasonCode": "STATUS_READ"
+    }
+  ]
+}

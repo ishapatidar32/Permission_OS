@@ -1,0 +1,13 @@
+{
+  "name": "@permissionos/demo-upstream",
+  "version": "0.1.0",
+  "description": "Downstream order execution service MCP server",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@permissionos/shared": "*"
+  }
+}
