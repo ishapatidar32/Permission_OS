@@ -60,6 +60,6 @@
     "react-router-dom": "^7.18.4",
     "tailwind-merge": "^3.7.0",
     "zod": "^3.25.76",
-    "mcp-policy-kit": "git+https://github.com/REPLACE_WITH_GITHUB_USERNAME/mcp-policy-kit.git#v0.1.0"
+    "mcp-policy-kit": "https://github.com/harsh7agarwal/mcp-policy-kit.git"
   }
 }
